@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIGH MODS FF | Loja Oficial</title>
+    <!-- Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontes modernas do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ff41;
+            --bg-dark: #050505;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-gamer { font-family: 'Rajdhani', sans-serif; }
+
+        /* Camada de Partículas (Bolinhas) */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Animações de brilho e movimento */
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            transform: skewX(-25deg);
+            animation: shine 3s infinite;
+        }
+
+        .hover-scale {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .green-glow {
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fundo de Partículas -->
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header class="p-6 border-b border-white/5 bg-black/40 backdrop-blur-md sticky top-0 z-50">
+            <div class="max-w-5xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <img src="https://cdn.discordapp.com/attachments/1493705738676207766/1498165377040121876/20260418_121501_0000.png?ex=69f02abc&is=69eed93c&hm=6556399aac46e738185ce5df0126e0ef9d23dea75d05a9f0fd7ac6e9287c4a7d&" 
+                         alt="Logo High Mods" 
+                         class="w-14 h-14 rounded-full border-2 border-[#00ff41] animate-pulse">
+                    <h1 class="text-2xl font-bold font-gamer tracking-tighter green-glow">HIGH MODS FF</h1>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="text-[10px] bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 px-3 py-1 rounded-full font-bold">STATUS: OPERACIONAL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-4xl mx-auto px-4 py-12">
+            <!-- Título Principal -->
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-6xl font-bold font-gamer mb-4 uppercase">Domine o <span class="text-[#00ff41]">Campo de Batalha</span></h2>
+                <p class="text-zinc-400">Produtos exclusivos com segurança Ant-Ban e Ant-Blacklist.</p>
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Produto 1: Holograma -->
+                <div class="bg-zinc-900/40 border border-white/10 rounded-[2rem] p-8 hover-scale fade-in" style="animation-delay: 0.1s">
+                    <div class="mb-6">
+                        <span class="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full">PROMOÇÃO</span>
+                    </div>
+                    <h3 class="text-2xl font-bold font-gamer mb-4">📦 HOLOGRAMA VERDE VIP</h3>
+                    <ul class="text-sm text-zinc-400 space-y-2 mb-8">
+                        <li>⚙️ Segurança: Ant Blacklist / Ant Ban</li>
+                        <li>⚙️ Funcionalidade: Android 11+</li>
+                        <li>⚙️ Uso: Conta Principal / Apostado</li>
+                        <li>⚙️ Gelo Transparente / 100% Armas</li>
+                        <li class="text-[#00ff41] font-bold">👺 FREE FIRE NORMAL</li>
+                    </ul>
+                    <div class="mb-6">
+                        <p class="text-zinc-500 line-through text-sm">R$ 15,90</p>
+                        <p class="text-4xl font-bold font-gamer">R$ 4,90 <span class="text-sm">💵</span></p>
+                    </div>
+                    <button onclick="openModal('holograma')" class="w-full bg-[#00ff41] text-black py-4 rounded-2xl font-black font-gamer tracking-wider btn-shine">COMPRAR AGORA</button>
+                </div>
+
+                <!-- Produto 2: Passador -->
+                <div class="bg-zinc-900/40 border border-white/10 rounded-[2rem] p-8 hover-scale fade-in" style="animation-delay: 0.2s">
+                    <div class="mb-6">
+                        <span class="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full">SUPER DESCONTO</span>
+                    </div>
+                    <h3 class="text-2xl font-bold font-gamer mb-4">📦 PASSADOR DE REPLAY FF</h3>
+                    <ul class="text-sm text-zinc-400 space-y-2 mb-8">
+                        <li>⚙️ Suporte: Todos os celulares e PC</li>
+                        <li>⚙️ Vantagem: Dois produtos em um</li>
+                        <li>⚙️ Foco: Apostado (Não seja pego)</li>
+                        <li>⚙️ Função: Passar replay rápido entre FFs</li>
+                        <li class="text-zinc-500 italic text-[10px]">Normal para o Max e Max para o Normal.</li>
+                    </ul>
+                    <div class="mb-6">
+                        <p class="text-zinc-500 line-through text-sm">R$ 19,90</p>
+                        <p class="text-4xl font-bold font-gamer">R$ 5,90 <span class="text-sm">💵</span></p>
+                    </div>
+                    <button onclick="openModal('replay')" class="w-full bg-[#00ff41] text-black py-4 rounded-2xl font-black font-gamer tracking-wider btn-shine">APROVEITAR PROMO</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal de Checkout (Pix) -->
+    <div id="modalPix" class="modal">
+        <div class="min-h-screen flex items-center justify-center p-4">
+            <div class="bg-[#0f0f0f] border border-white/5 w-full max-w-md rounded-[2.5rem] p-8 shadow-2xl">
+                <div class="text-center mb-8">
+                    <h4 class="text-[#00ff41] font-bold text-xs tracking-widest mb-2">PAGAMENTO PIX</h4>
+                    <h2 id="modalProductTitle" class="text-2xl font-bold font-gamer">PRODUTO</h2>
+                </div>
+
+                <div class="bg-black/50 border border-[#00ff41]/20 rounded-3xl p-6 mb-6 text-center">
+                    <p class="text-[10px] text-zinc-500 uppercase font-bold mb-3">Chave Pix Aleatória</p>
+                    <div id="pixKeyText" class="text-[#00ff41] font-mono text-[11px] break-all bg-black p-3 rounded-xl border border-white/5 mb-4">
+                        4b0b9f91-fa03-4955-a27f-5fc3a3e8c874
+                    </div>
+                    <button onclick="copyText('pixKeyText', 'btnCopyPix')" id="btnCopyPix" class="w-full bg-white text-black py-3 rounded-xl font-bold text-sm hover:bg-zinc-200 transition-colors">COPIAR CHAVE PIX</button>
+                    <p class="mt-4 text-[10px] text-zinc-500">Favorecido: <span class="text-white">VERA LÚCIA</span></p>
+                </div>
+
+                <div class="bg-blue-500/5 border border-blue-500/20 p-4 rounded-2xl mb-8">
+                    <p class="text-[11px] text-blue-200 text-center">APÓS O PAGAMENTO E A CONFIRMAÇÃO SERA ENTREGUE O PRODUTO NA HORA!</p>
+                </div>
+
+                <button onclick="showWaStep()" class="w-full bg-[#00ff41] text-black py-5 rounded-2xl font-black font-gamer tracking-widest btn-shine">PIX EFETUADO!</button>
+                <button onclick="closeAllModals()" class="w-full mt-4 text-zinc-600 text-xs font-bold uppercase">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Suporte (WhatsApp) -->
+    <div id="modalWa" class="modal">
+        <div class="min-h-screen flex items-center justify-center p-4">
+            <div class="bg-[#0f0f0f] border border-white/5 w-full max-w-md rounded-[2.5rem] p-10 text-center shadow-2xl">
+                <div class="w-20 h-20 bg-[#00ff41]/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-[#00ff41]/20">
+                    <svg class="w-10 h-10 text-[#00ff41]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h2 class="text-3xl font-bold font-gamer mb-4">PAGAMENTO REALIZADO?</h2>
+                <p class="text-zinc-400 text-sm mb-8">Após efetuado o pagamento, vá até esse contato no WhatsApp, mande o comprovante. Após eu visualizar e estiver tudo certo, enviarei o produto e as informações de como aplicar.</p>
+
+                <div class="bg-black/50 p-6 rounded-3xl border border-white/5 mb-8">
+                    <p class="text-zinc-500 text-[10px] font-bold mb-1">NÚMERO DE SUPORTE</p>
+                    <p id="numSuporte" class="text-2xl font-bold text-white mb-4">28 99258-7819</p>
+                    <button onclick="copyText('numSuporte', 'btnCopyNum')" id="btnCopyNum" class="w-full bg-zinc-800 text-white py-2 rounded-lg text-xs font-bold">COPIAR NÚMERO</button>
+                </div>
+
+                <a id="finalWaLink" href="#" target="_blank" class="block w-full bg-[#25D366] text-white py-5 rounded-2xl font-black font-gamer tracking-widest text-center shadow-[0_10px_20px_rgba(37,211,102,0.2)]">ABRIR WHATSAPP</a>
+                
+                <button onclick="closeAllModals()" class="mt-6 text-zinc-600 text-xs font-bold uppercase">Voltar à loja</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Partículas e Lógica da Loja -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Inicialização das Partículas (Bolinhas verdes flutuantes)
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#00ff41" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": true },
+                "size": { "value": 4, "random": true },
+                "line_linked": { "enable": false },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+            }
+        });
+
+        let currentProduct = "";
+
+        function openModal(prodId) {
+            currentProduct = prodId === 'holograma' ? "HOLOGRAMA VERDE VIP" : "PASSADOR DE REPLAY";
+            document.getElementById('modalProductTitle').innerText = currentProduct;
+            document.getElementById('modalPix').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+
+            // Configurar link do WhatsApp
+            const message = `Quero resgatar meu produto, irei enviar o comprovante, estou aguardando o envio e a confirmação do Pix do produto ${currentProduct}\n.\nRESPONDEREI O MAIS RÁPIDO POSSÍVEL!`;
+            document.getElementById('finalWaLink').href = `https://wa.me/5528992587819?text=${encodeURIComponent(message)}`;
+        }
+
+        function showWaStep() {
+            document.getElementById('modalPix').style.display = 'none';
+            document.getElementById('modalWa').style.display = 'block';
+        }
+
+        function closeAllModals() {
+            document.getElementById('modalPix').style.display = 'none';
+            document.getElementById('modalWa').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function copyText(elementId, btnId) {
+            const text = document.getElementById(elementId).innerText;
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const btn = document.getElementById(btnId);
+            const originalText = btn.innerText;
+            btn.innerText = "✓ COPIADO!";
+            btn.style.backgroundColor = "#00ff41";
+            btn.style.color = "black";
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "";
+                btn.style.color = "";
+            }, 2000);
+        }
+
+        // Fechar modal ao clicar fora dele
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') closeAllModals();
+        }
+    </script>
+</body>
+</html>
+
